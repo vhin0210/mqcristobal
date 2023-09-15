@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: mqcristobal-node
+    image: mqcristobal-node
+    build:
+      context: .
+      target: development
+    volumes:
+      - ./my-app:/app:cached
+    ports:
+      - 3000:3000
+
