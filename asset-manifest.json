@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/mqcristobal/static/css/main.cc9b533d.css",
+    "main.js": "/mqcristobal/static/js/main.b237da7a.js",
+    "static/js/787.28cb0dcd.chunk.js": "/mqcristobal/static/js/787.28cb0dcd.chunk.js",
+    "static/media/me.png": "/mqcristobal/static/media/me.fc1da7beaf250160a316.png",
+    "index.html": "/mqcristobal/index.html",
+    "main.cc9b533d.css.map": "/mqcristobal/static/css/main.cc9b533d.css.map",
+    "main.b237da7a.js.map": "/mqcristobal/static/js/main.b237da7a.js.map",
+    "787.28cb0dcd.chunk.js.map": "/mqcristobal/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cc9b533d.css",
+    "static/js/main.b237da7a.js"
+  ]
+}
