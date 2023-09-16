@@ -1,6 +1,7 @@
 import {
 	useEffect,
 	useState,
+	useMemo,
 } from "react"
 
 import {
@@ -13,29 +14,38 @@ import {
 	SimpleIcon,
 } from "./simple-icons"
 
+import myImage from "../assets/images/me.png"
+
 export function Intro({...props}) {
 	const [positionIndex, setPositionIndex] = useState(0)
 
-	const positions = [
-		<><em>Software</em> engineer</>,
-		<><em>Drupal</em> specialist</>,
-		<><em>UI</em> master</>,
-		<><em>PHP</em> developer</>,
-		<><em>Python</em> developer</>,
-		<><em>Javascript</em> developer</>,
-		<><em>ReactJS</em> developer</>,
-	]
+	const positions = useMemo(() => {
+		return [
+			<><em>Software</em> engineer</>,
+			<><em>Drupal</em> specialist</>,
+			<><em>UI</em> master</>,
+			<><em>PHP</em> developer</>,
+			<><em>Python</em> developer</>,
+			<><em>Javascript</em> developer</>,
+			<><em>ReactJS</em> developer</>,
+		]
+	}, [])
 
 	useEffect(() => {
-		const interval = setInterval(() => {
+		// const interval = setInterval(() => {
+		// 	const newPositionIndex = positionIndex < positions?.length - 1 ? positionIndex + 1 : 0
+		// 	setPositionIndex(newPositionIndex)
+		// }, 3000)
+		const timeout = setTimeout(() => {
 			const newPositionIndex = positionIndex < positions?.length - 1 ? positionIndex + 1 : 0
 			setPositionIndex(newPositionIndex)
 		}, 3000)
 
 		return () => {
-			clearInterval(interval)
+			// clearInterval(interval)
+			clearTimeout(timeout)
 		}
-	}, [positionIndex])
+	}, [positionIndex, positions])
 
 	return <div className="flex justify-end relative">
 		<div className="absolute h-full flex items-center">
@@ -48,7 +58,7 @@ export function Intro({...props}) {
 	        </div>
 	    </div>
         <div className="max-w-[700px] my-20">
-        	<img className="max-w-full" src="/assets/images/me.PNG" />
+        	<img alt="" className="max-w-full" src={myImage} />
        	</div>
 	</div>
 }
